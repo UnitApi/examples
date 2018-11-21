@@ -1,0 +1,40 @@
+version: 1.0.1
+localisation: "pl_PL"
+schema: ""
+title: "Wykrywanie adresow e-mail w tekstowej tresci / how to find an email adress in text html, regular expression"
+description: "Skrypt przeszukujacy plik tekstowy w celu odnalezienia adresow email"
+keywords: 
+  - regexp
+  - regular expression
+docs:
+  -  
+    type: help for understanding with examples
+    url: https://emailregex.com
+  -  
+    type: standards
+    url: https://www.regular-expressions.info/email.html
+  
+condition:
+  - All email addresses are in 7-bit US ASCII. (RFC 2822, section 2.2)
+  - Email addresses consist of a local part, the “@” symbol, and the domain. (RFC 2822, section 3.4.1)
+  - The local part can be unquoted, quoted in its entirety, or quoted on a per-label basis. (RFC 2822, sections 3.4.1 and 4.4)
+  - Unquoted local parts can consist of TEXT, optionally separated by periods. No periods can start or end the local part. Two periods together is invalid. (RFC 2822, section 3.4.1)
+  - TEXT can contain alphabetic, numeric, and these symbols: !#$%’*+-/=?^_`{|}~ (RFC 2822, section 3.4.1)
+  - The quoted local part starts with a quotation mark, ends with a quotation mark. (RFC 2822, section 3.4.1)
+  - The contents of a quoted local part can not contain characters 9 (TAB), 10 (LF), 13 (CR), 32 (space), 34 (“), 91-94 ([, \, ], ^). (RFC 2822, section 3.4.1)
+  - If the quoted local part has a backslash, the following character is escaped and must not be 10 (LF), 13 (CR). This supersedes the previous rule, allowing spaces and quotation marks in the email address as long as they are escaped. (RFC 2822, section 3.4.1)
+  - If an email is using the obsolete quoting on a per-label basis, then the email address consists of unquoted or quoted chunks separated by periods. (RFC 2822, section 4.4)
+  - The domain can be bracketed or plain. (RFC 2822, section 3.4.1)
+  - A plain domain consists of labels separated with periods. No period can start or end a domain name. No two periods in succession can be in a domain name. (RFC 1035, section 2.3.4)
+  - The maximum length of a label is 63 characters. (RFC 1035, section 2.3.4)
+  - A label may contain hyphens, but no two hyphens in a row. A label must not start nor end with a hyphen. (RFC 1035, section 2.3.4)
+  - Bracketed domains must start with [, end with ], and must not contain characters 9 (TAB), 10 (LF), 13 (CR), 32 (space), 91-94 ([, \, ], ^). (RFC 2822, section 3.4.1)
+  - The contents of a bracketed domain can have a \ precede a character to escape it, and the following character must not be 10 (LF) or 13 (CR). This allows spaces in the domain as long as they are escaped. (RFC2822, section 3.4.1)
+  - The maximum length of the local part is 64 characters. (RFC 2821, section 4.5.3.1)
+  - Domains must resolve with either an A or MX record. (RFC 2821, section 3.6)
+  - The maximum length of a domain must be 255 characters when being transmitted over the wire (for DNS lookups), thus the maximum length of the domain (the normal domain or the contents of the bracketed domain) is 253 characters. (RFC 1034, section 3.1)
+  - Any domain label can be at most 63 characters long. (RFC 1034, section 2.3.1)
+  - The maximum length of a “useful” email address is 255 characters. (RFC 2821, section 4.5.3.1)
+  - The maximum allowable length of an email address is 320 characters. (RFC 3696)
+  - The top level domain must be all alphabetic. (RFC 3696, section 2)
+
