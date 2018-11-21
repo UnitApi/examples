@@ -11,9 +11,11 @@ docs:
     type: help for understanding with examples
     url: https://emailregex.com
   -  
-    type: standards
+    type: How to Find or Validate an Email Address
     url: https://www.regular-expressions.info/email.html
-  
+  - 
+    type: standards
+    url: https://emailregex.com/email-validation-summary/  
 condition:
   - All email addresses are in 7-bit US ASCII. (RFC 2822, section 2.2)
   - Email addresses consist of a local part, the “@” symbol, and the domain. (RFC 2822, section 3.4.1)
@@ -37,4 +39,6 @@ condition:
   - The maximum length of a “useful” email address is 255 characters. (RFC 2821, section 4.5.3.1)
   - The maximum allowable length of an email address is 320 characters. (RFC 3696)
   - The top level domain must be all alphabetic. (RFC 3696, section 2)
-
+output:
+  language: php
+  
